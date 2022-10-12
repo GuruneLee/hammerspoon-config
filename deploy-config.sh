@@ -2,9 +2,11 @@
 # deploy-config.sh
 
 # clean hammerspoon config directory
-rm -r ~/.hammerspoon/* 2> /dev/null
+echo "clean config dir"
+sudo rm -r ~/.hammerspoon/*
 # copy repository dir to main dir
-cp -R `ls . | grep -v ${0##*/}` ~/.hammerspoon
+echo "copy new file to config dir"
+sudo cp -R `ls . | grep -v ${0##*/}` ~/.hammerspoon
 
 # reload 도 하고싶은데, 몇 가지 문제 있음
 ## 1. hs console 에서 hs.ipc.cliInstall() 를 먼저 실행해야 함. zsh에서 바로 실행하는 방법을 모르겠음.
