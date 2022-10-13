@@ -36,21 +36,37 @@ local ctrl_d_bind
 function pressUp()
     if ctrl_wasd_mode then
        fastKeyStroke({}, 'up') 
+    else
+        ctrl_w_bind:disable()
+        fastKeyStroke({'ctrl'}, 'w')
+        ctrl_w_bind:enable()
     end
 end
 function pressLeft()
     if ctrl_wasd_mode then
        fastKeyStroke({}, 'left') 
+    else
+        ctrl_a_bind:disable()
+        fastKeyStroke({'ctrl'}, 'a')
+        ctrl_a_bind:enable()
     end
 end
 function pressDown()
     if ctrl_wasd_mode then
        fastKeyStroke({}, 'down') 
+    else
+        ctrl_s_bind:disable()
+        fastKeyStroke({'ctrl'}, 's')
+        ctrl_s_bind:enable()
     end
 end
 function pressRight()
     if ctrl_wasd_mode then
        fastKeyStroke({}, 'right') 
+    else
+       ctrl_d_bind:disable()
+       fastKeyStroke({'ctrl'}, 'd')
+       ctrl_d_bind:enable()
     end
 end
 ctrl_w_bind = hs.hotkey.new({'ctrl'},'w', pressUp, nil, pressUp):enable()

@@ -18,3 +18,6 @@ function convert_to_eng_with_esc()
 end
 
 esc_bind = hs.hotkey.new({}, 'escape', convert_to_eng_with_esc):enable()
+
+hs.hints.hintChars = {'1', '2', '3', '4', 'Q', 'W', 'E', 'R'}
+hs.hotkey.bind({}, 'F10', hs.hints.windowHints)
